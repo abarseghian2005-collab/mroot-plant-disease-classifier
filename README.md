@@ -42,7 +42,7 @@ The final holdout was kept separate from model selection.
 
 The model is deployed with Gradio on Hugging Face Spaces.
 
-*Live demo:* ADD_HUGGING_FACE_LINK_HERE
+*Live demo:* https://huggingface.co/spaces/Armennnn/mroot-plant-disease-classifier
 
 ## Repository Files
 
