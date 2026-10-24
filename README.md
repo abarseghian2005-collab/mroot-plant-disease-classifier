@@ -97,7 +97,7 @@ its previously saved report.
 
 ## Presentation
 
-- [ACA presentation: 10 slides, with English explanations and speaker notes](MROOT_ACA_Presentation.pptx)
+- [PRESENTATION](MROOT_ACA_Presentation.pptx)
 
 ## Results from the runs
 
