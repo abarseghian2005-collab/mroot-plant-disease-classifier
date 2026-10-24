@@ -1,9 +1,0 @@
-{
-  "tests_passed": 9,
-  "failures": 0,
-  "errors": 0,
-  "api_predictor": "fake predictor for HTTP contract tests; no weight downloads",
-  "analysis_notebooks_executed": true,
-  "training_or_holdout_evaluation_run": false,
-  "new_repository_review_directory": "/kaggle/working/MROOT_GITHUB_REVIEW_20261024T131332_297754Z"
-}
