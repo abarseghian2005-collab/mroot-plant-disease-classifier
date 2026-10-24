@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "arm": "mixup_cutmix",
+  "epochs_completed": 19,
+  "best_epoch": 11,
+  "checkpoint_path": "/kaggle/working/MROOT_CLEAN_MIXUP_COMPARISON_20261024T064448_671839Z/mixup_cutmix/mixup_cutmix_best_epoch11_map0.960699.pth",
+  "checkpoint_sha256": "6c7a4a537eb52639e90a23b0e003f44f114c61131594daf407cbba387e796086",
+  "normal": {
+    "macro_map": 0.9606990770878436,
+    "top1": 0.9252577319587629,
+    "top5": 0.9948453608247423,
+    "images": 388
+  },
+  "fixed_tta": {
+    "macro_map": 0.960542022576947,
+    "top1": 0.9201030927835051,
+    "top5": 0.9974226804123711,
+    "images": 388
+  },
+  "stop_reason": "early_stopping",
+  "amp_overflows": 0,
+  "elapsed_seconds": 7031.5347777430015,
+  "initial_sha256": "2ad075bccc2241b2b6a253729a3c63571d9005102e1a80a06bfd1efe0266f810",
+  "train_manifest_sha256": "ac50f2feadafc51f9ccd51a7b78bb2f8c97187f98d882e22f7e41b11cf4c9f1e",
+  "validation_manifest_sha256": "af565b47a858f4ec66854912158015297e4b900bc115526152286e3988a1a84d",
+  "final_test_evaluated": false
+}

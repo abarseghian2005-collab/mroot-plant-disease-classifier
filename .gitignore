@@ -218,3 +218,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# MROOT generated assets and local credentials
+*.pth
+*.pt
+*.safetensors
+*.ckpt
+.huggingface/
+kaggle.json
+training_runs/
+data/images/

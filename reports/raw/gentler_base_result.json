@@ -1,0 +1,348 @@
+{
+  "experiment_name": "EVA02_BASE448_LLRD08_LRTHIRD_S27182_20261024T043747_428844Z",
+  "date": "2026-10-24T04:37:57.416916+00:00",
+  "model": "eva02_base_patch14_448.mim_in22k_ft_in22k_in1k",
+  "seed": 27182,
+  "input_resolution": 448,
+  "parameters": 86378535,
+  "train_manifest": "/kaggle/input/datasets/armenbars/mroot-current-best-backup/CLEAN_train.csv",
+  "validation_manifest": "/kaggle/input/datasets/armenbars/mroot-current-best-backup/CLEAN_val.csv",
+  "train_manifest_sha256": "cc4549a83731b557546499173f24680faf69bb9576034f6c679b90a76597c169",
+  "validation_manifest_sha256": "679d54e5c027af7cf6b436e6610519d237e5b3bb91e09275baa9847a702fa026",
+  "training_images": 6870,
+  "validation_images": 390,
+  "classes": [
+    "alternaria_leaf_spot",
+    "angular_leaf_spot",
+    "anthracnose",
+    "bacterial_leaf_spot",
+    "bacterial_leaf_streak_(black_chaff)",
+    "bacterial_wilt",
+    "berry_blotch",
+    "black_leaf_streak",
+    "black_rot",
+    "blossom_end_rot",
+    "brown_rot",
+    "brown_spot",
+    "bunchy_top",
+    "canker",
+    "downy_mildew",
+    "early_blight",
+    "frog_eye_leaf_spot",
+    "gray_leaf_spot",
+    "greening_disease",
+    "head_scab",
+    "late_blight",
+    "leaf_curl",
+    "leaf_mold",
+    "leaf_rust",
+    "leaf_spot",
+    "loose_smut",
+    "mosaic",
+    "mosaic_virus",
+    "northern_leaf_blight",
+    "powdery_mildew",
+    "rust",
+    "scab",
+    "septoria_blotch",
+    "septoria_leaf_spot",
+    "sheath_blight",
+    "smut",
+    "stem_rust",
+    "stripe_rust",
+    "tar_spot"
+  ],
+  "class_to_idx": {
+    "alternaria_leaf_spot": 0,
+    "angular_leaf_spot": 1,
+    "anthracnose": 2,
+    "bacterial_leaf_spot": 3,
+    "bacterial_leaf_streak_(black_chaff)": 4,
+    "bacterial_wilt": 5,
+    "berry_blotch": 6,
+    "black_leaf_streak": 7,
+    "black_rot": 8,
+    "blossom_end_rot": 9,
+    "brown_rot": 10,
+    "brown_spot": 11,
+    "bunchy_top": 12,
+    "canker": 13,
+    "downy_mildew": 14,
+    "early_blight": 15,
+    "frog_eye_leaf_spot": 16,
+    "gray_leaf_spot": 17,
+    "greening_disease": 18,
+    "head_scab": 19,
+    "late_blight": 20,
+    "leaf_curl": 21,
+    "leaf_mold": 22,
+    "leaf_rust": 23,
+    "leaf_spot": 24,
+    "loose_smut": 25,
+    "mosaic": 26,
+    "mosaic_virus": 27,
+    "northern_leaf_blight": 28,
+    "powdery_mildew": 29,
+    "rust": 30,
+    "scab": 31,
+    "septoria_blotch": 32,
+    "septoria_leaf_spot": 33,
+    "sheath_blight": 34,
+    "smut": 35,
+    "stem_rust": 36,
+    "stripe_rust": 37,
+    "tar_spot": 38
+  },
+  "validation_strategy": "All 390 unchanged CLEAN_val rows after every complete epoch; no holdout access",
+  "sampler": "WeightedRandomSampler 1/n_class, replacement=True, 6870 draws per epoch",
+  "loss": "Standard CE label_smoothing=.05; no additional class-weighted loss",
+  "augmentation": "Compose(\n    RandomResizedCrop(size=(448, 448), scale=(0.8, 1.0), ratio=(0.9, 1.1), interpolation=bicubic, antialias=True)\n    RandomHorizontalFlip(p=0.5)\n    RandomVerticalFlip(p=0.1)\n    RandomRotation(degrees=[-10.0, 10.0], interpolation=bicubic, expand=False, fill=0)\n    ColorJitter(brightness=(0.85, 1.15), contrast=(0.85, 1.15), saturation=(0.9, 1.1), hue=(-0.02, 0.02))\n    RandAugment(num_ops=2, magnitude=7, num_magnitude_bins=31, interpolation=InterpolationMode.NEAREST, fill=None)\n    ToTensor()\n    Normalize(mean=(0.48145466, 0.4578275, 0.40821073), std=(0.26862954, 0.26130258, 0.27577711))\n    RandomErasing(p=0.15, scale=(0.02, 0.08), ratio=(0.3, 3.3), value=0, inplace=False)\n)",
+  "optimizer": "AdamW",
+  "learning_rates": "head 1e-4/3; last block 2e-5/3; earlier backbone layers decay by 0.8 per layer",
+  "controlled_change": "All LR groups and cosine floor scaled by 1/3",
+  "initial_state_path": "/kaggle/input/notebooks/armenbars/mroot-deploy/EVA02_BASE448_LLRD08_REVIEWED_BALANCED_S27182_20261023T232813_645547Z/initial_state.pth",
+  "initial_state_sha256": "2ad075bccc2241b2b6a253729a3c63571d9005102e1a80a06bfd1efe0266f810",
+  "EMA": "Secondary observation, decay=min(.999,(1+successful_updates)/(10+successful_updates)); evaluated every epoch but selected only at raw-best epoch",
+  "layer_decay": 0.8,
+  "weight_decay": 0.05,
+  "decay_note": "Weight decay applied to all parameters, matching reconstructed V1 recipe",
+  "scheduler": "LinearLR start_factor .1 for 3 epochs then cosine 27, eta_min 5e-7/3",
+  "runtime_versions": {
+    "torch": "2.11.0+cu128",
+    "timm": "1.0.29",
+    "numpy": "2.1.3",
+    "pandas": "2.3.3"
+  },
+  "micro_batch": 8,
+  "gradient_accumulation": 2,
+  "effective_batch": 16,
+  "gpu_ids": [
+    0,
+    1
+  ],
+  "AMP": "FP16, GradScaler initial 1024, overflow skip and backoff, stop after 50 overflows",
+  "gradient_clipping": 1.0,
+  "epochs": 30,
+  "early_stopping_patience": 8,
+  "maximum_training_hours": 4,
+  "checkpoint_selection_rule": "Maximum RAW normal single-view validation macro mAP; save matched EMA at that epoch; never select on ensemble score",
+  "data_cfg": {
+    "input_size": [
+      3,
+      448,
+      448
+    ],
+    "interpolation": "bicubic",
+    "mean": [
+      0.48145466,
+      0.4578275,
+      0.40821073
+    ],
+    "std": [
+      0.26862954,
+      0.26130258,
+      0.27577711
+    ],
+    "crop_pct": 1.0,
+    "crop_mode": "squash"
+  },
+  "previous_small_experiment": {
+    "experiment_name": "EVA02_SMALL336_NATURAL_BALANCED_CE_S27182_v01_AMPFIX_20261023T221339_372979Z",
+    "date": "2026-10-23T22:13:39.421974+00:00",
+    "model": "eva02_small_patch14_336.mim_in22k_ft_in1k",
+    "seed": 27182,
+    "input_resolution": 336,
+    "train_manifest": "/kaggle/input/datasets/armenbars/mroot-current-best-backup/CLEAN_train.csv",
+    "validation_strategy": "unchanged CLEAN_val.csv; no holdout inference; independent grouped CV still required",
+    "sampler": "shuffle without replacement; all 6870 rows once per epoch",
+    "loss": "per-example CE label_smoothing=.05, multiplied by N/(39*n_class), batch mean",
+    "augmentation": "Compose(\n    RandomResizedCrop(size=(336, 336), scale=(0.8, 1.0), ratio=(0.9, 1.1), interpolation=bicubic, antialias=True)\n    RandomHorizontalFlip(p=0.5)\n    RandomVerticalFlip(p=0.1)\n    RandomRotation(degrees=[-10.0, 10.0], interpolation=bicubic, expand=False, fill=0)\n    ColorJitter(brightness=(0.85, 1.15), contrast=(0.85, 1.15), saturation=(0.9, 1.1), hue=(-0.02, 0.02))\n    RandAugment(num_ops=2, magnitude=7, num_magnitude_bins=31, interpolation=InterpolationMode.NEAREST, fill=None)\n    ToTensor()\n    Normalize(mean=[0.48145466, 0.4578275, 0.40821073], std=[0.26862954, 0.26130258, 0.27577711])\n    RandomErasing(p=0.15, scale=(0.02, 0.08), ratio=(0.3, 3.3), value=0, inplace=False)\n)",
+    "optimizer": "AdamW",
+    "weight_decay": 0.05,
+    "learning_rates": {
+      "backbone": 2e-05,
+      "head": 0.0001
+    },
+    "scheduler": "LinearLR .1 warmup3 then cosine27 eta_min5e-7",
+    "epochs": 30,
+    "early_stopping_patience": 8,
+    "checkpoint_selection_rule": "maximum normal validation macro mAP; no TTA-based checkpoint selection",
+    "validation_macro_mAP": 0.9272025264384354,
+    "accuracy": 0.8692307692307693,
+    "top5_accuracy": 0.9923076923076923,
+    "per_class_summary": "validation_per_class_comparison.csv",
+    "ensemble_contribution": {
+      "delta_macro_map": 0.0012755903258828694,
+      "paired_bootstrap_CI95": [
+        -0.004613955596582339,
+        0.0010027700842664133,
+        0.006877777973587374
+      ],
+      "disagreement": 0.11025641025641025
+    },
+    "checkpoint_path": "/kaggle/working/EVA02_SMALL336_NATURAL_BALANCED_CE_S27182_v01_AMPFIX_20261023T221339_372979Z/best_epoch13_map0.923738.pth",
+    "notes": "Single sampling-mechanism experiment reconstructed from user-supplied V1 recipe. Historical run is not an exact freshly matched control; causal attribution requires replication. Original models, inputs, labels and checkpoints preserved. First attempt stopped on an overly strict AMP gradient assertion after one update. This retry resets identical initial weights and optimizer; numerical handling is corrected, not an additional model hypothesis.",
+    "pretrained_data_cfg": {
+      "input_size": [
+        3,
+        336,
+        336
+      ],
+      "interpolation": "bicubic",
+      "mean": [
+        0.48145466,
+        0.4578275,
+        0.40821073
+      ],
+      "std": [
+        0.26862954,
+        0.26130258,
+        0.27577711
+      ],
+      "crop_pct": 1.0,
+      "crop_mode": "center"
+    },
+    "validation_data_cfg": {
+      "input_size": [
+        3,
+        336,
+        336
+      ],
+      "interpolation": "bicubic",
+      "mean": [
+        0.48145466,
+        0.4578275,
+        0.40821073
+      ],
+      "std": [
+        0.26862954,
+        0.26130258,
+        0.27577711
+      ],
+      "crop_pct": 1.0,
+      "crop_mode": "center"
+    },
+    "device": "cuda:1",
+    "AMP": "FP16",
+    "gradient_clipping": 1.0,
+    "numerical_retry_of": "/kaggle/working/EVA02_SMALL336_NATURAL_BALANCED_CE_S27182_v01_20261023T220852_035667Z",
+    "AMP_initial_scale": 1024.0,
+    "AMP_overflow_policy": "standard GradScaler skip and backoff; stop after 50 overflows",
+    "worker_policy": "respawn each epoch; fixed worker seeds and saved generator state",
+    "status": "completed",
+    "completed": "2026-10-23T23:20:09.596904+00:00",
+    "best_epoch": 13,
+    "epochs_run": 21,
+    "scores": {
+      "candidate_normal": {
+        "macro_map": 0.9237381479640719,
+        "top1": 0.8666666666666667,
+        "top5": 0.9897435897435898
+      },
+      "candidate_fixed": {
+        "macro_map": 0.9272025264384354,
+        "top1": 0.8692307692307693,
+        "top5": 0.9923076923076923
+      },
+      "locked_three_equal": {
+        "validation_images": 390,
+        "classes": 39,
+        "macro_map": 0.9471792916022975,
+        "top1": 0.8871794871794871,
+        "top5": 0.9948717948717949,
+        "inference_seconds": 39.67461502599997
+      },
+      "four_equal_candidate": {
+        "macro_map": 0.9484548819281804,
+        "top1": 0.8948717948717949,
+        "top5": 0.9948717948717949
+      }
+    },
+    "elapsed_minutes": 66.27261818038333,
+    "decision": "not a confirmed improvement; retain V1 deployment"
+  },
+  "selection_note": "Chosen after restored compact-ensemble review: reduce update size after control Base validation declined beyond epoch4",
+  "primary_ensemble": "Equal original Seed1 + original Seed2 + new raw Base; three models total; compare with the same ensemble using old Base",
+  "secondary_ensemble": "Same fixed three-model ensemble with EMA at the raw-selected epoch; no extra member",
+  "source_links": [
+    "https://arxiv.org/abs/2303.11331",
+    "https://huggingface.co/timm/eva02_base_patch14_448.mim_in22k_ft_in22k_in1k",
+    "https://github.com/huggingface/pytorch-image-models/blob/main/timm/optim/_param_groups.py",
+    "https://arxiv.org/abs/2502.06761"
+  ],
+  "limitations": "Learning-rate comparison from identical saved initialization, with secondary within-run EMA observation. GPU numerical nondeterminism remains possible. Validation has 21 near-duplicate candidates and one visually confirmed conflicting-label shared photograph. Bootstrap is conditional on selected predictions and excludes model-selection uncertainty. No independent generalization claim without grouped CV or new unseen data.",
+  "status": "completed",
+  "completed": "2026-10-24T05:56:01.902588+00:00",
+  "epochs_run": 12,
+  "best_epoch": 4,
+  "best_normal_map": 0.9447351533274769,
+  "checkpoint_path": "/kaggle/working/EVA02_BASE448_LLRD08_LRTHIRD_S27182_20261024T043747_428844Z/eva02_base448_lrthird_seed27182_raw_best_e04_map0.944735.pth",
+  "matched_ema_checkpoint_path": "/kaggle/working/EVA02_BASE448_LLRD08_LRTHIRD_S27182_20261024T043747_428844Z/eva02_base448_lrthird_seed27182_ema_at_raw_best_e04_map0.939568.pth",
+  "scores": {
+    "raw_normal": {
+      "macro_map": 0.9447351533274769,
+      "top1": 0.9,
+      "top5": 0.9923076923076923
+    },
+    "raw_fixed": {
+      "macro_map": 0.9465577221468623,
+      "top1": 0.8897435897435897,
+      "top5": 0.9923076923076923
+    },
+    "ema_normal": {
+      "macro_map": 0.9395681975834653,
+      "top1": 0.8948717948717949,
+      "top5": 0.9897435897435898
+    },
+    "ema_fixed": {
+      "macro_map": 0.9405496375470224,
+      "top1": 0.8974358974358975,
+      "top5": 0.9923076923076923
+    },
+    "old_base_fixed": {
+      "macro_map": 0.942226319708534,
+      "top1": 0.8974358974358975,
+      "top5": 0.9974358974358974
+    },
+    "compact_reference": {
+      "macro_map": 0.9512497200655096,
+      "top1": 0.9051282051282051,
+      "top5": 1.0
+    },
+    "compact_raw": {
+      "macro_map": 0.9491526198122161,
+      "top1": 0.9051282051282051,
+      "top5": 0.9948717948717949
+    },
+    "compact_ema": {
+      "macro_map": 0.9465526805173176,
+      "top1": 0.9102564102564102,
+      "top5": 0.9948717948717949
+    },
+    "original_three_small": {
+      "macro_map": 0.9471792916022975,
+      "top1": 0.8871794871794871,
+      "top5": 0.9948717948717949
+    }
+  },
+  "primary_delta_macro_map": -0.00209710025329346,
+  "primary_paired_CI95": [
+    -0.007673605628129676,
+    -0.0014410169604084366,
+    0.005289605773146873
+  ],
+  "secondary_ema_delta_macro_map": -0.004697039548192006,
+  "secondary_ema_paired_CI95": [
+    -0.010721544367613394,
+    -0.004038145313751407,
+    0.0028287346074305267
+  ],
+  "standalone_raw_delta_macro_map": 0.004331402438328302,
+  "standalone_raw_paired_CI95": [
+    -0.007034930853264154,
+    0.0035593565772533142,
+    0.014070075275960235
+  ],
+  "elapsed_minutes": 78.07461206683334,
+  "decision": "No confirmed primary improvement; retain existing checkpoints and deployment"
+}

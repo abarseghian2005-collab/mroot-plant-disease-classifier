@@ -1,0 +1,31 @@
+{
+  "purpose": "Reproduce the validation-only global-weighting comparison for the original three Small models",
+  "weights": [
+    [
+      0.3333333333333333,
+      0.3333333333333333,
+      0.3333333333333333
+    ],
+    [
+      0.5,
+      0.25,
+      0.25
+    ],
+    [
+      0.25,
+      0.5,
+      0.25
+    ],
+    [
+      0.25,
+      0.25,
+      0.5
+    ]
+  ],
+  "folds": 5,
+  "seed": 20261024,
+  "tie_margin": 0.0001,
+  "historical_pooled_crossfit_map": 0.9450904096,
+  "historical_equal_weight_map": 0.9471792916,
+  "decision": "Retain equal weights; the weighting test failed."
+}

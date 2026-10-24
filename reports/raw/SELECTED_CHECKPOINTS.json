@@ -1,0 +1,36 @@
+{
+  "control": {
+    "checkpoint": "control/control_best_epoch07_map0.948053.pth",
+    "sha256": "9d8606db322e7261baf40bf19f87e8fb1f1a94495079d3f2c76fe28eea4bf373",
+    "best_epoch": 7,
+    "normal": {
+      "macro_map": 0.9480527928091171,
+      "top1": 0.9072164948453608,
+      "top5": 0.9948453608247423,
+      "images": 388
+    },
+    "fixed_tta": {
+      "macro_map": 0.9496913231816063,
+      "top1": 0.9072164948453608,
+      "top5": 0.9948453608247423,
+      "images": 388
+    }
+  },
+  "mixup_cutmix": {
+    "checkpoint": "mixup_cutmix/mixup_cutmix_best_epoch11_map0.960699.pth",
+    "sha256": "6c7a4a537eb52639e90a23b0e003f44f114c61131594daf407cbba387e796086",
+    "best_epoch": 11,
+    "normal": {
+      "macro_map": 0.9606990770878436,
+      "top1": 0.9252577319587629,
+      "top5": 0.9948453608247423,
+      "images": 388
+    },
+    "fixed_tta": {
+      "macro_map": 0.960542022576947,
+      "top1": 0.9201030927835051,
+      "top5": 0.9974226804123711,
+      "images": 388
+    }
+  }
+}

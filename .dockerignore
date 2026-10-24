@@ -1,0 +1,9 @@
+.git
+.venv
+__pycache__
+models
+data
+notebooks
+presentation
+*.pth
+*.safetensors

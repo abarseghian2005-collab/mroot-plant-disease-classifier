@@ -1,0 +1,47 @@
+{
+  "started": "2026-10-24T06:55:35.886779+00:00",
+  "settings": {
+    "seed": 27182,
+    "max_epochs": 20,
+    "patience": 8,
+    "hours_per_arm": 2.5,
+    "effective_batch_size": 16,
+    "weight_decay": 0.05,
+    "label_smoothing": 0.05,
+    "layer_decay": 0.8,
+    "head_lr": 3.3333333333333335e-05,
+    "backbone_lr": 6.6666666666666675e-06,
+    "minimum_lr": 1.6666666666666665e-07,
+    "mixup_alpha": 0.2,
+    "cutmix_alpha": 1.0,
+    "mix_probability": 0.5,
+    "cutmix_switch_probability": 0.5,
+    "selection": "Best normal-view macro mAP on all 388 experiment validation images",
+    "final_test": "Locked; no final-test images, predictions, or labels are read by training"
+  },
+  "split_summary": {
+    "training_images": 6790,
+    "validation_images": 388,
+    "historical_copy_free_validation_images": 368,
+    "quarantined_train_rows": 80,
+    "quarantined_validation_rows": 2,
+    "conflicting_train_val_label_groups": 1,
+    "visually_reviewed_edges": 81,
+    "additional_high_similarity_edges": 2,
+    "train_manifest": "/kaggle/working/MROOT_CLEAN_MIXUP_COMPARISON_20261024T064448_671839Z/experiment_train.csv",
+    "validation_manifest": "/kaggle/working/MROOT_CLEAN_MIXUP_COMPARISON_20261024T064448_671839Z/experiment_validation.csv",
+    "train_sha256": "ac50f2feadafc51f9ccd51a7b78bb2f8c97187f98d882e22f7e41b11cf4c9f1e",
+    "validation_sha256": "af565b47a858f4ec66854912158015297e4b900bc115526152286e3988a1a84d",
+    "original_manifests_unchanged": true,
+    "original_images_unchanged": true,
+    "new_test_evaluation": false,
+    "limit": "Disjoint for the detected and reviewed image groups; additional undetected copies remain possible."
+  },
+  "hypothesis": "MixUp/CutMix may reduce memorization beyond the gentler Base448 recipe.",
+  "arms": [
+    "control",
+    "mixup_cutmix"
+  ],
+  "bounded": "Only these two runs; at most 20 epochs and 2.5 hours per arm.",
+  "test_set": "The 623-image final-test subset stays locked and is not read or evaluated."
+}

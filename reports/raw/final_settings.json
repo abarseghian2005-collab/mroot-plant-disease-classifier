@@ -1,0 +1,19 @@
+{
+  "seed": 27182,
+  "max_epochs": 20,
+  "patience": 8,
+  "hours_per_arm": 2.5,
+  "effective_batch_size": 16,
+  "weight_decay": 0.05,
+  "label_smoothing": 0.05,
+  "layer_decay": 0.8,
+  "head_lr": 3.3333333333333335e-05,
+  "backbone_lr": 6.6666666666666675e-06,
+  "minimum_lr": 1.6666666666666665e-07,
+  "mixup_alpha": 0.2,
+  "cutmix_alpha": 1.0,
+  "mix_probability": 0.5,
+  "cutmix_switch_probability": 0.5,
+  "selection": "Best normal-view macro mAP on all 388 experiment validation images",
+  "final_test": "Locked; no final-test images, predictions, or labels are read by training"
+}

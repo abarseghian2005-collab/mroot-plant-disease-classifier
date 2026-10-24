@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "space_url": "https://huggingface.co/spaces/Armennnn/mroot-plant-disease-classifier-v2",
+  "commit": "cb7bf0deb1179cd2ce445bf024f355c38660fb9e",
+  "hardware": {
+    "current": "zero-a10g",
+    "requested": "zero-a10g"
+  },
+  "verified_at_utc": "2026-10-24T12:13:07.471380+00:00",
+  "response": {
+    "label": "black rot",
+    "confidences": [
+      {
+        "label": "black rot",
+        "confidence": 0.7472044825553894
+      },
+      {
+        "label": "brown rot",
+        "confidence": 0.09868985414505005
+      },
+      {
+        "label": "scab",
+        "confidence": 0.06647244095802307
+      },
+      {
+        "label": "late blight",
+        "confidence": 0.009197765961289406
+      },
+      {
+        "label": "rust",
+        "confidence": 0.005012356210500002
+      }
+    ]
+  },
+  "request_seconds_including_queue": 3.08512965099726,
+  "max_probability_difference_from_verified_gpu_model": 0.0000011920928955078125,
+  "remote_checkpoint_hashes_verified": [
+    {
+      "name": "clean_control_epoch7",
+      "sha256": "b2c230d128bbdce6a8c242dd3a5c34fc80441af530451aa6b2e94041ce2f7f3b",
+      "bytes": 345536444
+    },
+    {
+      "name": "clean_mixup_cutmix_epoch11",
+      "sha256": "691f3319224f0564d69aafe1aa7574b133ed35b8378d4d8d15352997d4adf7fe",
+      "bytes": 345536444
+    }
+  ],
+  "original_space_unchanged": true,
+  "original_space_commit": "73eec79748096c4d2ca95cccdf5595dc90b65335",
+  "test_input": "one validation image; no holdout images read"
+}
