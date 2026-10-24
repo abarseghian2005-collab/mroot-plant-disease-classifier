@@ -64,7 +64,7 @@ in this GitHub repository.
 
 ## Presentation and experiment history
 
-- [ACA presentation: 10 slides, with Armenian speaker notes](MROOT_ACA_Presentation.pptx)
+- [ACA presentation: 10 slides, with English explanations and speaker notes](MROOT_ACA_Presentation.pptx)
 - [Training and experiment notebook on Kaggle](https://www.kaggle.com/code/armenbars/mroot-deploy)
 - [Archived experiment code, notebooks, manifests, and reports](https://github.com/abarseghian2005-collab/mroot-plant-disease-classifier/tree/f046ab5)
 
