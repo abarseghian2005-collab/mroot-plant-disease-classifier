@@ -64,10 +64,34 @@ in this GitHub repository.
 
 ## Presentation and experiment history
 
-- [ACA presentation](MROOT_ACA_Presentation.pptx)
-- [Presenter guide: definitions, experiment reasons, and speaking notes](MROOT_Presenter_Guide.md)
+- [ACA presentation: 10 slides, with Armenian speaker notes](MROOT_ACA_Presentation.pptx)
 - [Training and experiment notebook on Kaggle](https://www.kaggle.com/code/armenbars/mroot-deploy)
 - [Archived experiment code, notebooks, manifests, and reports](https://github.com/abarseghian2005-collab/mroot-plant-disease-classifier/tree/f046ab5)
+
+## Results from the runs
+
+The matched control and MixUp/CutMix runs used the same 388 validation photos.
+Both used EVA-02 Base at 448 input, with the same starting weights and ordinary
+training recipe. The candidate added the image/target mixing policy.
+
+![Validation curves for the two matched training runs](training_curves.png)
+
+Class-level checks showed why the overall score was not the whole story.
+Bacterial leaf spot and septoria leaf spot had the lowest AP in the control
+run, followed by rust and early blight. Mixing improved early blight AP from
+80.43% to 95.32%, but septoria leaf spot fell from 60.18% to 57.91% on the same
+validation photos. These are per-class ranking scores, not accuracy, and small
+class samples make the estimates uncertain.
+
+The matrix below shows the final two-model system on the 623 reporting photos.
+Rows are true classes and columns are predicted classes. Numbers are image
+counts, and the diagonal contains the 557 correct first predictions. Click the
+image to inspect all 39 classes.
+
+[![Final ensemble confusion matrix](confusion_matrix.png)](confusion_matrix.png)
+
+These figures use the saved training histories and final confusion table.
+They do not represent a new evaluation or further tuning on the reporting set.
 
 The original [V1 app](https://huggingface.co/spaces/Armennnn/mroot-plant-disease-classifier)
 remains available. It uses the earlier three-model EVA Small ensemble.
