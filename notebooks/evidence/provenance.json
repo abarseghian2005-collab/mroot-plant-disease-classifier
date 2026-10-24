@@ -1,0 +1,105 @@
+{
+  "source_notebook": "https://www.kaggle.com/code/armenbars/mroot-deploy",
+  "source_directory": "/kaggle/working/MROOT_CLEAN_MIXUP_COMPARISON_20261024T064448_671839Z",
+  "notebook_status": "Readable reconstruction from exported experiment code and saved reports.",
+  "training_rerun": false,
+  "holdout_evaluation_rerun": false,
+  "training_code_changes": [
+    "Split the original training arm into setup, one-epoch, checkpoint, and run functions.",
+    "Keep augmentation, sampler, optimizer, scheduler, loss, accumulation, and validation recipe.",
+    "Omit old-session preservation checks, per-batch status files, and latest-resume serialization.",
+    "Retain the original source snapshot for comparison. New training is disabled by default."
+  ],
+  "files": [
+    {
+      "source": "reports/class_support.csv",
+      "file": "evidence/class_support.csv",
+      "sha256": "5f19aca5fc8c67a4aa9f6b22dfe4515db9fc1907f3eec5cf3f4ca71043c0614b"
+    },
+    {
+      "source": "reports/image_metadata.csv",
+      "file": "evidence/image_metadata.csv",
+      "sha256": "9fba51a5d0d4fe17bdfe9b9d5ab8b4f5c2cbe700729beae4282a9f2ec780ca8a"
+    },
+    {
+      "source": "reports/eda_summary.json",
+      "file": "evidence/eda_summary.json",
+      "sha256": "6a4383e1d51c01841b6f12eb044b145c943301bd5920d404d5f93a700eac117e"
+    },
+    {
+      "source": "reports/split_summary.json",
+      "file": "evidence/split_summary.json",
+      "sha256": "e419d8f6f4e145059e633041006fcdc38f3bb97587def62472d9398d01f22c62"
+    },
+    {
+      "source": "reports/final_settings.json",
+      "file": "evidence/final_settings.json",
+      "sha256": "96027973dbd225e3f4ca02f64941a173520b2bade8f3508eddcdc65d848f961c"
+    },
+    {
+      "source": "reports/PAIRED_TRAINING_RESULTS.json",
+      "file": "evidence/PAIRED_TRAINING_RESULTS.json",
+      "sha256": "6c9fc02992edc69aac12a807b82a6ea8b16aaecfc02b6633a8da86ebe1a772c5"
+    },
+    {
+      "source": "reports/validation_system_comparison_368.csv",
+      "file": "evidence/validation_system_comparison_368.csv",
+      "sha256": "d5d98f87b1f05e661d21e5d241d1e3b42bff780b160a98aec6213da72b68eb7f"
+    },
+    {
+      "source": "reports/validation_class_comparison.csv",
+      "file": "evidence/validation_class_comparison.csv",
+      "sha256": "4ebe12f242e59f9e144775d6dd7e6664f832517ae5402a5686b96d243eeff995"
+    },
+    {
+      "source": "reports/selected_model_comparison.csv",
+      "file": "evidence/selected_model_comparison.csv",
+      "sha256": "e8eda705e4187bc6fcf12c3d98f73930c0301e7e0047bacc0bb2f65bef8e3071"
+    },
+    {
+      "source": "reports/export_provenance.json",
+      "file": "evidence/export_provenance.json",
+      "sha256": "d876d4f58fcd0c1c075de5544e1a273e9bfe48855d408f572c9fe0f08396b988"
+    },
+    {
+      "source": "reports/control/experiment_config.json",
+      "file": "evidence/control/experiment_config.json",
+      "sha256": "76825c673512aaa0492c06b8e01a7d2004c97b1a78f578ca0fa9debcf9bb1ec5"
+    },
+    {
+      "source": "reports/control/training_history.csv",
+      "file": "evidence/control/training_history.csv",
+      "sha256": "df3f6616b3c9561df4e5966694a4815693bc3323d96bc045bc0df0a96a97b059"
+    },
+    {
+      "source": "reports/mixup_cutmix/training_history.csv",
+      "file": "evidence/mixup_cutmix/training_history.csv",
+      "sha256": "0cdd9ffca37a7be430d1bc4c36a4440e9d844dad91ebfd26d93fa83ed3e600eb"
+    },
+    {
+      "source": "manifests/experiment_train.csv",
+      "file": "evidence/experiment_train.csv",
+      "sha256": "ac50f2feadafc51f9ccd51a7b78bb2f8c97187f98d882e22f7e41b11cf4c9f1e"
+    },
+    {
+      "source": "manifests/experiment_validation.csv",
+      "file": "evidence/experiment_validation.csv",
+      "sha256": "af565b47a858f4ec66854912158015297e4b900bc115526152286e3988a1a84d"
+    },
+    {
+      "source": "training_helpers.py",
+      "file": "evidence/original_training_helpers.py",
+      "sha256": "6ce987f7c55359aeeda636a980dca1d1e44e8a08ed406ea2af0b6ea2e6d5a0cf"
+    },
+    {
+      "source": "seed_clean_run.py",
+      "file": "evidence/original_seed_clean_run.py",
+      "sha256": "2f7a9cb84915330005f0889c6c6b6a36a7289b9ae49cfbde458ee30c63a40481"
+    },
+    {
+      "source": "reports/FINAL_HOLDOUT_20261024T103253_167194Z/FINAL_HOLDOUT_RESULT.json",
+      "file": "evidence/final_reporting_result.json",
+      "sha256": "79f4f7d398d97286faaa4c6d2bda4d2e138df753e477815a44b27fb9a0d2ff67"
+    }
+  ]
+}

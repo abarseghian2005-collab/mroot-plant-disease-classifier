@@ -59,8 +59,41 @@ revision, verifies both SHA-256 checksums, and caches files in `.mroot_cache/`.
 Later launches reuse that cache. Local inference uses the CPU by default.
 
 `app.py` contains the inference and web interface. `class_mapping.json` fixes
-the order of the 39 labels. No training data or large model weights are stored
-in this GitHub repository.
+the order of the 39 labels. Training images and large model weights are stored
+outside this GitHub repository. The notebooks include reviewed file lists and
+small saved reports so the analysis can be inspected without the images.
+
+## Data analysis and training code
+
+- [Data analysis notebook](notebooks/01_data_analysis.ipynb): class counts, image
+  quality, dimensions, and related-image checks.
+- [Final training notebook](notebooks/02_final_training.ipynb): augmentation,
+  sampling, optimizer, MixUp/CutMix, training, per-epoch validation, and checkpoint
+  selection. It also shows the saved logs, model comparisons, and final report.
+
+Both notebooks include output tables and embedded result images that are
+visible directly on GitHub. The short code comments are in Armenian.
+The output figures come from saved experiment reports, rather than new model runs.
+
+To open the complete repository locally in Jupyter:
+
+```bash
+python -m pip install -r notebooks/requirements.txt
+jupyter lab
+```
+
+The notebooks default to review mode. They can read the included manifests,
+tables, and figures without loading any model or opening the original photos.
+The training code is organised from the exported Kaggle source, with setup and
+logging simplified. The original source snapshot and report checksums are in
+`notebooks/evidence/`.
+
+Optional training requires a CUDA environment with PyTorch, torchvision, timm,
+and scikit-learn, the original image datasets, and the exact initial checkpoint
+identified in the saved config. That checkpoint is not bundled here. With
+`RUN_TRAINING = False`, the notebook does not train or evaluate a model. New
+training uses a unique output directory. The final test section only displays
+its previously saved report.
 
 ## Presentation and experiment history
 

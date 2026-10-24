@@ -1,0 +1,15 @@
+{
+  "source_notebook": "https://www.kaggle.com/code/armenbars/mroot-deploy",
+  "source_directory": "/kaggle/working/MROOT_CLEAN_MIXUP_COMPARISON_20261024T064448_671839Z",
+  "helpers": [
+    "clean_image_transforms",
+    "clean_worker_seed",
+    "clean_optimizer",
+    "predict_clean_validation",
+    "clean_prediction_metrics",
+    "run_clean_training_arm",
+    "run_clean_paired_experiment"
+  ],
+  "no_training_or_evaluation_rerun": true,
+  "no_holdout_manifest_or_predictions_exported": true
+}
