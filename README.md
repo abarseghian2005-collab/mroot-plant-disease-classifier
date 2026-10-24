@@ -95,11 +95,9 @@ identified in the saved config. That checkpoint is not bundled here. With
 training uses a unique output directory. The final test section only displays
 its previously saved report.
 
-## Presentation and experiment history
+## Presentation
 
 - [ACA presentation: 10 slides, with English explanations and speaker notes](MROOT_ACA_Presentation.pptx)
-- [Training and experiment notebook on Kaggle](https://www.kaggle.com/code/armenbars/mroot-deploy)
-- [Archived experiment code, notebooks, manifests, and reports](https://github.com/abarseghian2005-collab/mroot-plant-disease-classifier/tree/f046ab5)
 
 ## Results from the runs
 
