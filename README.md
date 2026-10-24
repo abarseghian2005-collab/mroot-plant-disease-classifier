@@ -169,10 +169,13 @@ tests/                    Input/schema/API contract tests without large models
 
 ## ACA presentation
 
-The [slide deck](presentation/MROOT_ACA_Presentation.pptx) contains 14 main slides
-and six appendix slides. The [speaking notes](presentation/speaking_notes.md)
-follow the experiment evidence in a student presentation of about ten minutes.
-See the [demo plan](presentation/README.md) for the live demonstration sequence.
+The [expanded slide deck](presentation/MROOT_ACA_Detailed_Presentation.pptx) explains
+the historical and new experiments across 30 main slides and six appendix slides.
+The [detailed speaking notes](presentation/detailed_speaking_notes.md) explain the
+reason for each experiment, its exact change, results, and decision in plain language.
+The full deck takes about 20-25 minutes. The notes identify a shorter sequence for
+a talk of about ten minutes. See the [demo plan](presentation/README.md).
+The earlier compact deck and its notes remain available in the same folder.
 
 ## Tests and container
 

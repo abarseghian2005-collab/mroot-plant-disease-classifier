@@ -1,8 +1,12 @@
 # ACA presentation and demo plan
 
-Use slides 1-14 for the talk. Slides 15-20 are backup material for questions.
-The PowerPoint includes editable charts/tables and speaking notes; the separate
-notes file is easier to rehearse from.
+Use MROOT_ACA_Detailed_Presentation.pptx for the expanded explanation. It contains
+30 main slides and six appendix slides, with a full talk of about 20-25 minutes.
+For a talk of about ten minutes, use slides 1, 3, 5, 6, 12, 14, 16, 17, 22, 24,
+26, 27, 29, and 30. The detailed_speaking_notes.md file explains each slide.
+The earlier 20-slide compact deck and its notes remain in this folder.
+
+The PowerPoint includes editable charts/tables and speaking notes.
 
 Suggested timing:
 
